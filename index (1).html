@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Menú Digital | APECAFEQ Quinchía</title>
+    <meta name="description" content="Carta digital de la cafetería APECAFEQ. Orgullosamente cafeteros por tradición.">
+
+
+    <!-- Fuentes Premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+
+    <style>
+        :root {
+            /* Paleta de Colores Inspirada en el Café */
+            --cafe-oscuro: #2c1810;  /* Espresso */
+            --cafe-medio: #6f4e37;   /* Grano tostado */
+            --cafe-claro: #a67b5b;   /* Canela */
+            --crema: #f3e5ab;        /* Espuma */
+            --papel: #faf7f2;        /* Fondo tipo carta */
+            --dorado: #d4af37;       /* Detalles premium */
+            --verde-wa: #25D366;     /* WhatsApp */
+            --rojo-alerta: #e74c3c;
+            --verde-suave: #4CAF50; /* Para el mensaje de éxito */
+            
+            --sombra-suave: 0 4px 15px rgba(44, 24, 16, 0.08);
+            --sombra-fuerte: 0 8px 30px rgba(44, 24, 16, 0.2);
+            --radio-borde: 16px;
+        }
+
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--papel);
+            color: var(--cafe-oscuro);
+            /* Patrón sutil de fondo */
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236f4e37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            padding-bottom: 100px; /* Espacio para el carrito flotante */
+        }
+
+
+        /* --- HEADER / PORTADA --- */
+        header {
+            position: relative;
+            background: linear-gradient(rgba(44, 24, 16, 0.85), rgba(44, 24, 16, 0.7)), url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 1.5rem 3rem;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            box-shadow: var(--sombra-fuerte);
+            overflow: hidden;
+        }
+
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .logo-circle {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--dorado);
+            color: var(--cafe-oscuro);
+            font-size: 2.5rem;
+        }
+
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 5px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+
+        .subtitle {
+            font-size: 1.1rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--crema);
+            margin-bottom: 1rem;
+        }
+
+
+        .slogan {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+            background: rgba(255,255,255,0.15);
+            padding: 10px 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+
+        /* --- NAVEGACIÓN --- */
+        .nav-sticky-wrapper {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(250, 247, 242, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 10px 0;
+        }
+
+
+        .category-nav {
+            display: flex;
+            overflow-x: auto;
+            gap: 12px;
+            padding: 5px 20px;
+            scrollbar-width: none; /* Firefox */
+        }
+        .category-nav::-webkit-scrollbar { display: none; } /* Chrome */
+
+
+        .cat-btn {
+            background: transparent;
+            border: 1px solid var(--cafe-medio);
+            color: var(--cafe-medio);
+            padding: 8px 18px;
+            border-radius: 25px;
+            white-space: nowrap;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+
+        .cat-btn.active {
+            background: var(--cafe-oscuro);
+            color: var(--dorado);
+            border-color: var(--cafe-oscuro);
+            box-shadow: 0 4px 10px rgba(44, 24, 16, 0.3);
+            transform: scale(1.05);
+        }
+
+
+        /* --- MENÚ CONTENT --- */
+        .menu-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin: 2.5rem 0 1.5rem;
+            color: var(--cafe-oscuro);
+        }
+
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-right: 15px;
+            white-space: nowrap;
+        }
+
+
+        .section-line {
+            height: 2px;
+            background: var(--cafe-claro);
+            flex-grow: 1;
+            opacity: 0.3;
+            border-radius: 2px;
+        }
+
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+
+        /* --- TARJETA DE PRODUCTO --- */
+        .product-card {
+            background: white;
+            border-radius: var(--radio-borde);
+            padding: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--sombra-suave);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid rgba(0,0,0,0.03);
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: var(--cafe-claro);
+        }
+
+
+        .product-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+
+        .product-info h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--cafe-oscuro);
+            margin-bottom: 5px;
+        }
+
+
+        .product-desc {
+            font-size: 0.8rem;
+            color: #777;
+            font-style: italic;
+        }
+
+
+        .product-price {
+            font-weight: 700;
+            color: var(--cafe-medio);
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+
+        .add-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: var(--papel);
+            color: var(--cafe-oscuro);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            border: 1px solid var(--cafe-claro);
+        }
+
+
+        .add-btn:active {
+            background: var(--cafe-oscuro);
+            color: white;
+            transform: scale(0.9);
+        }
+
+
+        /* --- BOTÓN FLOTANTE (FAB) --- */
+        .fab-container {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 900;
+            animation: bounceIn 1s;
+        }
+
+
+        @keyframes bounceIn {
+            0% { transform: scale(0); opacity: 0; }
+            60% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+
+        .fab {
+            background: var(--cafe-oscuro);
+            color: var(--dorado);
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 10px 25px rgba(44, 24, 16, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+
+        .fab:hover {
+            transform: scale(1.05);
+        }
+
+
+        .fab-icon {
+            font-size: 1.3rem;
+        }
+
+
+        .fab-text {
+            font-weight: 700;
+            font-size: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+
+        .fab-badge {
+            background: var(--rojo-alerta);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+
+        /* --- MODAL CARRITO Y SUCESO (BACKDROP) --- */
+        .modal-backdrop {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: flex-end; 
+        }
+
+
+        /* Contenido del Modal Carrito */
+        .cart-modal-content {
+            background: white;
+            width: 100%;
+            max-width: 500px;
+            height: 85vh; 
+            border-radius: 25px 25px 0 0;
+            display: flex;
+            flex-direction: column;
+            animation: slideUp 0.3s ease-out;
+            box-shadow: 0 -10px 40px rgba(0,0,0,0.2);
+        }
+        
+        /* Contenido del Modal Suceso (Galleta de la Fortuna) */
+        .success-modal-content {
+            background: var(--papel);
+            width: 90%;
+            max-width: 400px;
+            padding: 30px;
+            border-radius: var(--radio-borde);
+            text-align: center;
+            box-shadow: var(--sombra-fuerte);
+            animation: fadeInScale 0.4s ease-out;
+            border: 3px solid var(--dorado);
+        }
+        
+        @keyframes fadeInScale {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+
+        .success-modal-content h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--verde-suave);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .success-modal-content p {
+            font-size: 1.1rem;
+            color: var(--cafe-oscuro);
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+        
+        .success-modal-content button {
+            background: var(--cafe-oscuro);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+
+
+
+        @media(min-width: 768px) {
+            .modal-backdrop { align-items: center; }
+            .cart-modal-content {
+                height: auto;
+                max-height: 80vh;
+                border-radius: 20px;
+            }
+        }
+
+
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+
+
+        .modal-header {
+            padding: 20px 25px;
+            border-bottom: 1px dashed var(--cafe-claro);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--cafe-oscuro);
+        }
+
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: #999;
+            cursor: pointer;
+        }
+
+
+        .cart-items-container {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+
+        .empty-cart-msg {
+            text-align: center;
+            color: #999;
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+
+        .cart-item-info strong {
+            display: block;
+            color: var(--cafe-oscuro);
+            margin-bottom: 4px;
+        }
+
+
+        .cart-item-info small {
+            color: var(--cafe-medio);
+        }
+
+
+        .qty-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f5f5f5;
+            padding: 5px;
+            border-radius: 30px;
+        }
+
+
+        .qty-btn {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: none;
+            background: white;
+            color: var(--cafe-oscuro);
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+
+        .modal-footer {
+            padding: 25px;
+            background: #fcfcfc;
+            border-top: 1px solid #eee;
+        }
+
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--cafe-oscuro);
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .table-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--cafe-claro);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            text-align: center;
+            transition: border 0.3s, box-shadow 0.3s;
+        }
+
+
+        .table-input:focus {
+            border-color: var(--dorado);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.3);
+            outline: none;
+        }
+        
+        .table-input::-webkit-outer-spin-button,
+        .table-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .table-input[type=number] {
+            -moz-appearance: textfield; /* Firefox */
+        }
+
+
+        .notes-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            font-family: 'Lato', sans-serif;
+            resize: none;
+            transition: border 0.3s;
+        }
+        
+        .notes-input:focus {
+            border-color: var(--cafe-medio);
+            outline: none;
+        }
+        
+        .validation-message {
+            display: none;
+            background: var(--rojo-alerta);
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: 700;
+            transition: opacity 0.5s ease-out;
+            opacity: 0;
+        }
+
+
+        .whatsapp-btn {
+            width: 100%;
+            background: var(--verde-wa);
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: transform 0.2s;
+        }
+
+
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+    <!-- PORTADA -->
+    <header>
+        <div class="header-content">
+            <div class="logo-circle">
+                <img src="https://static.wixstatic.com/media/442082_eba13a550b2944328257a48cc8e23f90~mv2.png/v1/fill/w_1929,h_1879,al_c/Imagen%20188.png" alt="APECAFEQ logo" style="width:84px;height:84px;object-fit:cover;border-radius:50%;"> <!-- Icono simbólico de montaña/café -->
+            </div>
+            <h1>APECAFEQ</h1>
+            <p class="subtitle">Quinchía - Risaralda</p>
+            <div class="slogan">
+                <i class="fas fa-coffee"></i> "¡Orgullosamente Cafeteros por Tradición! Café de alta calidad con notas entre cítricas y dulces."
+            </div>
+        </div>
+    </header>
+
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <div class="nav-sticky-wrapper">
+        <nav class="category-nav" id="categoryNav">
+            <!-- Se inyecta con JS -->
+        </nav>
+    </div>
+
+
+    <!-- CONTENIDO DEL MENÚ -->
+    <main class="menu-wrapper" id="menuWrapper">
+        <!-- Se inyecta con JS -->
+    </main>
+
+
+    <!-- BOTÓN FLOTANTE (FAB) -->
+    <div class="fab-container" onclick="toggleCart()">
+        <div class="fab">
+            <i class="fas fa-shopping-basket fab-icon"></i>
+            <span class="fab-text">Mi Pedido</span>
+            <div class="fab-badge" id="cartCount">0</div>
+        </div>
+    </div>
+
+
+    <!-- MODAL DEL CARRITO -->
+    <div class="modal-backdrop" id="cartModal">
+        <div class="cart-modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Tu Comanda</h2>
+                <button class="close-modal" onclick="toggleCart()">&times;</button>
+            </div>
+            
+            <div class="cart-items-container" id="cartItems">
+                <!-- Items del carrito -->
+            </div>
+
+
+            <div class="modal-footer">
+                <!-- CAMPO OBLIGATORIO DE MESA -->
+                <input type="number" class="table-input" id="tableNumber" placeholder="* Número de Mesa (Obligatorio)" required min="1">
+                <div id="validationMessage" class="validation-message"></div>
+                <!-- FIN CAMPO OBLIGATORIO -->
+                
+                <textarea class="notes-input" id="orderNotes" rows="2" placeholder="📝 Notas (Ej: sin azúcar, leche deslactosada...)"></textarea>
+                <div class="total-row">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0</span>
+                </div>
+                <button class="whatsapp-btn" onclick="sendOrder()">
+                    <i class="fab fa-whatsapp" style="font-size: 1.4rem;"></i>
+                    Enviar Comanda
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- MODAL DE SUCESO / FORTUNA DE QUINCHÍA -->
+    <div class="modal-backdrop" id="successModal" style="align-items: center;">
+        <div class="success-modal-content">
+            <h3><i class="fas fa-hand-sparkles"></i> ¡Orden Recibida!</h3>
+            <p id="fortuneMessage"></p>
+            <button onclick="document.getElementById('successModal').style.display='none'">
+                Genial, Gracias
+            </button>
+        </div>
+    </div>
+
+
+    <script>
+        // --- BASE DE DATOS DEL MENÚ ---
+        const menuData = [
+            {
+                id: 'calientes',
+                name: 'Bebidas Calientes',
+                items: [
+                    { name: 'Café Xixaraca', price: 3500 },
+                    { name: 'Café Campesino', price: 3800 },
+                    { name: 'Café Espresso', price: 3500 },
+                    { name: 'Capuccino', price: 4500 },
+                    { name: 'Capuccino Especial', price: 5000 },
+                    { name: 'Mocaccino', price: 5000 },
+                    { name: 'Chocolate', price: 4500 },
+                    { name: 'Bombón', price: 4000 },
+                    { name: 'Chocomelos', price: 6000 },
+                    { name: 'Aguapanela', price: 3800 },
+                    { name: 'Milo Caliente', price: 5000 },
+                    { name: 'Caspiroleta', price: 5000 },
+                    { name: 'Maizenita', price: 5000 },
+                    { name: 'Vaso de Leche', price: 4000 }
+                ]
+            },
+            {
+                id: 'aromaticas',
+                name: 'Aromáticas',
+                items: [
+                    { name: 'Aromática Tradicional', price: 2000 },
+                    { name: 'Aromática Artesanal', price: 6000 },
+                    { name: 'Aromática de Frutas', price: 3500 },
+                    { name: 'Frutos Deshidratados', price: 7000 },
+                    { name: 'Té Chai', price: 5300 }
+                ]
+            },
+            {
+                id: 'frias',
+                name: 'Bebidas Frías',
+                items: [
+                    { name: 'Malteada', price: 10500 },
+                    { name: 'Helado y Café', price: 10000 },
+                    { name: 'Frappe', price: 5000 },
+                    { name: 'Granizado de Café', price: 5000 },
+                    { name: 'Granizado de Frutas', price: 7500 },
+                    { name: 'Mocca Helado', price: 7300 },
+                    { name: 'Helado Espresso', price: 6500 },
+                    { name: 'Xixaraca Frío', price: 4000 },
+                    { name: 'Limonada de Café', price: 4500 },
+                    { name: 'Soda de Café', price: 8300 },
+                    { name: 'Soda Michelada', price: 6500 },
+                    { name: 'Soda Saborizada', price: 9000 },
+                    { name: 'Soda Simple', price: 3500 },
+                    { name: 'Tamarindo', price: 3800 },
+                    { name: 'Tamarindo Michelado', price: 5500 },
+                    { name: 'Milo Frío', price: 5500 },
+                    { name: 'Helado Mini', price: 7300 },
+                    { name: 'Jugo en agua', price: 4000 },
+                    { name: 'Jugo en leche', price: 5200 },
+                    { name: 'Botella con agua', price: 1000 }
+                ]
+            },
+            {
+                id: 'licor',
+                name: 'Bebidas con Licor',
+                items: [
+                    { name: 'Capuccino con Licor', price: 8000 },
+                    { name: 'Café Irlandés', price: 9000 },
+                    { name: 'Café y Licor', price: 7000 },
+                    { name: 'Granizado con Licor', price: 8000 },
+                    { name: 'Soda Italiana', price: 10000 },
+                    { name: 'Café Imperial', price: 12000 },
+                    { name: 'Affogato', price: 11000 },
+                    { name: 'Copa de Vino', price: 6000 },
+                    { name: 'Botella de Vino', price: 36000 },
+                    { name: 'Adicional de Licor', price: 7000 }
+                ]
+            },
+            {
+                id: 'acompa',
+                name: 'Acompaña tu Café',
+                items: [
+                    { name: 'Torta de la Casa', price: 3500 },
+                    { name: 'Torta con Helado', price: 6000 },
+                    { name: 'Almohabana', price: 2300 },
+                    { name: 'Pastel Hojaldrado', price: 4500 },
+                    { name: 'Dedo de Queso', price: 1700 },
+                    { name: 'Arepa de Queso', price: 1200 }
+                ]
+            }
+        ];
+        
+        // --- MENSAJES DE FORTUNA DE QUINCHÍA ---
+        const QUINCHIA_FORTUNES = [
+            "La mejor vista del Eje Cafetero es la que tienes ahora, esperando tu café.",
+            "Recuerda que la felicidad se mide en el número de tazas de café al día. ¡Hoy vas bien!",
+            "Un buen grano de Risaralda sabe que el secreto está en la paciencia. Tu pedido ya está en camino.",
+            "Hoy es un día perfecto para una pausa. Tu elección de café ha sido sabia.",
+            "El aroma que persigues te llevará a grandes ideas. ¡Disfruta tu Quixaraca!",
+            "No te preocupes por el mañana, el café de hoy es suficiente bendición.",
+            "Tu alma está tan llena como la taza que pronto tendrás en tus manos. ¡Salud!",
+            "La vida es corta, pero una buena taza de café colombiano la hace sentir eterna.",
+            "Como el grano en la montaña, superarás todos los retos con altura y buen sabor."
+        ];
+
+
+        // --- ESTADO Y CONFIGURACIÓN ---
+        let cart = {};
+        // NÚMERO DE WHATSAPP ACTUALIZADO A +57 3132293165
+        const WHATSAPP_NUMBER = "573132293165"; 
+
+
+        // --- INICIALIZACIÓN ---
+        function init() {
+            const nav = document.getElementById('categoryNav');
+            const main = document.getElementById('menuWrapper');
+
+
+            menuData.forEach((section, index) => {
+                // 1. Crear botón de navegación
+                const btn = document.createElement('button');
+                btn.className = `cat-btn ${index === 0 ? 'active' : ''}`;
+                btn.innerText = section.name;
+                btn.onclick = () => scrollToSection(section.id, btn);
+                nav.appendChild(btn);
+
+
+                // 2. Crear sección
+                const secDiv = document.createElement('div');
+                secDiv.id = section.id;
+                secDiv.innerHTML = `
+                    <div class="section-header">
+                        <h2>${section.name}</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="products-grid" id="grid-${section.id}"></div>
+                `;
+                main.appendChild(secDiv);
+
+
+                // 3. Crear tarjetas de productos
+                const grid = document.getElementById(`grid-${section.id}`);
+                section.items.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'product-card';
+                    card.innerHTML = `
+                        <div class="product-info">
+                            <h3>${item.name}</h3>
+                            <div class="product-price">$${item.price.toLocaleString('es-CO')}</div>
+                        </div>
+                        <button class="add-btn" onclick="addToCart('${item.name}', ${item.price})">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    `;
+                    grid.appendChild(card);
+                });
+            });
+        }
+
+
+        // --- FUNCIONES UI ---
+        function scrollToSection(id, btn) {
+            // Scroll suave
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Actualizar botón activo
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+
+        function toggleCart() {
+            const modal = document.getElementById('cartModal');
+            const isVisible = modal.style.display === 'flex';
+            modal.style.display = isVisible ? 'none' : 'flex';
+            
+            if (!isVisible) renderCart(); // Renderizar al abrir
+        }
+
+
+        // Cerrar modal al hacer clic fuera (Solo para el carrito, no para el de éxito)
+        document.getElementById('cartModal').addEventListener('click', function(e) {
+            if (e.target === this) toggleCart();
+        });
+
+
+        // --- LÓGICA DEL CARRITO ---
+        function addToCart(name, price) {
+            if (!cart[name]) {
+                cart[name] = { price: price, qty: 1 };
+            } else {
+                cart[name].qty++;
+            }
+            updateCartBadge();
+            
+            // Feedback visual pequeño
+            const fab = document.querySelector('.fab');
+            fab.style.transform = "scale(1.15)";
+            setTimeout(() => fab.style.transform = "scale(1)", 200);
+        }
+
+
+        function changeQty(name, delta) {
+            if (cart[name]) {
+                cart[name].qty += delta;
+                if (cart[name].qty <= 0) delete cart[name];
+                renderCart();
+                updateCartBadge();
+            }
+        }
+
+
+        function updateCartBadge() {
+            let count = 0;
+            Object.values(cart).forEach(item => count += item.qty);
+            document.getElementById('cartCount').innerText = count;
+        }
+
+
+        function renderCart() {
+            const container = document.getElementById('cartItems');
+            const totalEl = document.getElementById('cartTotal');
+            container.innerHTML = '';
+            
+            let total = 0;
+            const entries = Object.entries(cart);
+
+
+            if (entries.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-cart-msg">
+                        <i class="fas fa-mug-hot" style="font-size: 3rem; color: #ddd;"></i>
+                        <p>No hay productos en la comanda.</p>
+                        <button onclick="toggleCart()" style="color:var(--cafe-medio); border:none; background:none; text-decoration:underline; cursor:pointer;">Volver al menú</button>
+                    </div>`;
+                totalEl.innerText = "$0";
+                return;
+            }
+
+
+            entries.forEach(([name, item]) => {
+                const subtotal = item.price * item.qty;
+                total += subtotal;
+
+
+                const itemHTML = `
+                    <div class="cart-item">
+                        <div class="cart-item-info">
+                            <strong>${name}</strong>
+                            <small>$${item.price.toLocaleString('es-CO')} c/u</small>
+                        </div>
+                        <div class="qty-selector">
+                            <button class="qty-btn" onclick="changeQty('${name}', -1)">-</button>
+                            <span style="font-weight:bold; min-width:20px; text-align:center;">${item.qty}</span>
+                            <button class="qty-btn" onclick="changeQty('${name}', 1)">+</button>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += itemHTML;
+            });
+
+
+            totalEl.innerText = `$${total.toLocaleString('es-CO')}`;
+        }
+
+
+        // Función para mostrar el mensaje de validación (reemplaza alert)
+        function showValidationMessage(msg, element) {
+            element.innerText = msg;
+            element.style.display = 'block';
+            // Fuerza la re-pintura para asegurar la transición de opacidad
+            void element.offsetWidth; 
+            element.style.opacity = '1';
+            
+            // Ocultar mensaje después de unos segundos
+            setTimeout(() => {
+                element.style.opacity = '0';
+                setTimeout(() => {
+                    element.style.display = 'none';
+                }, 500); // 500ms para la transición de opacidad
+            }, 3000); 
+        }
+        
+        // --- FUNCIÓN PARA MOSTRAR LA FORTUNA ---
+        function showSuccessMessage() {
+            // 1. Obtener mensaje aleatorio
+            const randomIndex = Math.floor(Math.random() * QUINCHIA_FORTUNES.length);
+            const fortune = QUINCHIA_FORTUNES[randomIndex];
+            
+            // 2. Insertar y mostrar modal
+            document.getElementById('fortuneMessage').innerText = fortune;
+            document.getElementById('successModal').style.display = 'flex';
+        }
+
+
+        // --- FUNCIÓN PRINCIPAL DE ENVÍO A WHATSAPP ---
+        function sendOrder() {
+            const tableNumberInput = document.getElementById('tableNumber');
+            const tableNumber = tableNumberInput.value.trim();
+            const notes = document.getElementById('orderNotes').value;
+            const validationMessage = document.getElementById('validationMessage');
+
+
+            // 1. Validar el carrito
+            if (Object.keys(cart).length === 0) {
+                showValidationMessage("Por favor, agrega productos a tu comanda primero ☕", validationMessage);
+                return;
+            }
+
+
+            // 2. Validar el número de mesa (OBLIGATORIO)
+            if (!tableNumber || isNaN(tableNumber) || parseInt(tableNumber) <= 0) {
+                showValidationMessage("🛑 El número de Mesa es *obligatorio*. Por favor, ingrésalo.", validationMessage);
+                tableNumberInput.focus();
+                return;
+            }
+            
+            // 3. Construir mensaje
+            let message = `👋 *MESA No. ${tableNumber}* - Nueva Comanda:\n\n`;
+            let total = 0;
+
+
+            Object.entries(cart).forEach(([name, item]) => {
+                const subtotal = item.price * item.qty;
+                total += subtotal;
+                message += `▪ *${item.qty}x* ${name} ($${subtotal.toLocaleString('es-CO')})\n`;
+            });
+
+
+            message += `\n💰 *TOTAL: $${total.toLocaleString('es-CO')}*`;
+
+
+            if (notes.trim()) {
+                message += `\n\n📝 *Notas Adicionales:* ${notes}`;
+            }
+
+
+            // 4. Enviar a WhatsApp
+            const encodedMsg = encodeURIComponent(message);
+            // Se utiliza el número WHATSAPP_NUMBER (actualizado a 573132293165)
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMsg}`, '_blank');
+            
+            // 5. Mostrar la fortuna y cerrar modal de carrito
+            toggleCart(); 
+            showSuccessMessage();
+            
+            // Opcional: limpiar el carrito y la mesa después del envío
+            cart = {};
+            tableNumberInput.value = '';
+            document.getElementById('orderNotes').value = '';
+            updateCartBadge();
+        }
+
+
+        // Arrancar la app
+        init();
+
+
+        // Intersection Observer para actualizar navegación al hacer scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    const sectionName = menuData.find(m => m.id === id)?.name;
+                    if(sectionName) {
+                        document.querySelectorAll('.cat-btn').forEach(b => {
+                            b.classList.toggle('active', b.innerText === sectionName);
+                        });
+                        
+                        // Auto-scroll del menú horizontal
+                        const activeBtn = document.querySelector('.cat-btn.active');
+                        if(activeBtn) {
+                            activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                        }
+                    }
+                }
+            });
+        }, { threshold: 0.5 }); // Cuando el 50% de la sección es visible
+
+
+        // Esperar a que se renderice para observar
+        setTimeout(() => {
+            menuData.forEach(section => {
+                const el = document.getElementById(section.id);
+                if(el) observer.observe(el);
+            });
+        }, 500);
+
+
+    </script>
+</body>
+</html>
