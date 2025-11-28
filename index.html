@@ -27,6 +27,20 @@ h1{font-family:'Playfair Display',serif;font-size:2.8rem;margin-bottom:5px;lette
 .section-header h2{font-family:'Playfair Display',serif;font-size:1.8rem;margin-right:15px;white-space:nowrap}
 .section-line{height:2px;background:var(--cafe-claro);flex-grow:1;opacity:0.3;border-radius:2px}
 .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+
+/* Estilo para los sub-apartados dentro del grid */
+.sub-category-title {
+  grid-column: 1 / -1;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--cafe-medio);
+  margin-top: 20px;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px dashed var(--cafe-claro);
+  font-weight: 700;
+}
+
 .product-card{background:white;border-radius:var(--radio-borde);padding:18px;display:flex;justify-content:space-between;align-items:center;box-shadow:var(--sombra-suave);transition:transform 0.2s,box-shadow 0.2s;border:1px solid rgba(0,0,0,0.03);position:relative;overflow:hidden}
 .product-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--cafe-claro)}
 .product-card:hover{transform:translateY(-3px);box-shadow:0 10px 20px rgba(0,0,0,0.08)}
@@ -87,7 +101,6 @@ h1{font-family:'Playfair Display',serif;font-size:2.8rem;margin-bottom:5px;lette
 
 <main class="menu-wrapper" id="menuWrapper"></main>
 
-<!-- FAB -->
 <div class="fab-container" onclick="toggleCart()">
   <div class="fab">
     <i class="fas fa-shopping-basket fab-icon"></i>
@@ -96,7 +109,6 @@ h1{font-family:'Playfair Display',serif;font-size:2.8rem;margin-bottom:5px;lette
   </div>
 </div>
 
-<!-- Carrito Modal -->
 <div class="modal-backdrop" id="cartModal">
   <div class="cart-modal-content">
     <div class="modal-header">
@@ -116,7 +128,6 @@ h1{font-family:'Playfair Display',serif;font-size:2.8rem;margin-bottom:5px;lette
   </div>
 </div>
 
-<!-- Success Modal -->
 <div class="modal-backdrop" id="successModal" style="align-items:center;">
   <div class="success-modal-content">
     <h3><i class="fas fa-hand-sparkles"></i> ¡Orden Recibida!</h3>
@@ -127,13 +138,14 @@ h1{font-family:'Playfair Display',serif;font-size:2.8rem;margin-bottom:5px;lette
 
 <script>
 /* ---------------------------
-   MENU DATA (actualizados)
+   MENU DATA (Actualizado: Helado MiniChips movido a Acompaña tu Café)
    --------------------------- */
 const menuData = [
   {
     id: 'calientes',
     name: 'Bebidas Calientes',
     items: [
+      { name: '— Nuestros Cafés —', isHeader: true },
       {name:'Café Xixaraca', price:3500},
       {name:'Café Campesino', price:3800},
       {name:'Café Espresso', price:3500},
@@ -141,16 +153,18 @@ const menuData = [
       {name:'Capuccino', price:4500},
       {name:'Capuccino Especial', price:5000},
       {name:'Mocaccino', price:5000},
-      {name:'Chocolate', price:4500},
       {name:'Bombón', price:4000},
+      {name:'Maizenita Café', price:5000},
+      {name:'Café Tiramisú', price:10500},
+
+      { name: '— Chocolate y Tradición —', isHeader: true },
+      {name:'Chocolate', price:4500},
       {name:'Chocomelos', price:6000},
       {name:'Aguapanela', price:3800},
       {name:'Milo Caliente', price:5000},
       {name:'Caspiroleta', price:5000},
       {name:'Maizenita', price:5000},
-      {name:'Maizenita Café', price:5000},
       {name:'Macana', price:5500},
-      {name:'Café Tiramisú', price:10500},
       {name:'Vaso de Leche', price:4000}
     ]
   },
@@ -162,51 +176,61 @@ const menuData = [
       {name:'Aromática Artesanal', price:6000},
       {name:'Aromática de Frutas', price:3500},
       {name:'Frutos Deshidratados', price:7000},
-      {name:'Té Chai', price:6000} // precio actualizado
+      {name:'Té Chai', price:6000}
     ]
   },
   {
     id: 'frias',
     name: 'Bebidas Frías',
     items: [
-      {name:'Malteada', price:10500, flavors:['Café','Frutos Rojos','Vainilla','Brownie','Maracuyá','Tiramisú']},
+      /* --- Subapartado CAFÉS --- */
+      { name: '— Cafés Fríos —', isHeader: true },
       {name:'Helado y Café', price:10000},
       {name:'Frappe', price:5000},
       {name:'Granizado de Café', price:5000},
-      {name:'Granizado de Frutas', price:7500},
       {name:'Mocca Helado', price:7300},
-      {name:'Helado Espresso', price:6500},
       {name:'Xixaraca Frío', price:4000},
       {name:'Limonada de Café', price:4500},
-      {name:'Soda de Café', price:8300},
-      {name:'Soda Michelada', price:6500},
-      {name:'Soda Saborizada', price:9000},
-      {name:'Soda Simple', price:3500},
-      {name:'Tamarindo', price:3800},
-      {name:'Tamarindo Michelado', price:5500},
+      {name:'Helado Espresso', price:6500},
+
+      /* --- Subapartado Restante (Sin MiniChips) --- */
+      { name: '— Malteadas y Refrescantes —', isHeader: true },
+      {name:'Malteada', price:10500, flavors:['Café','Frutos Rojos','Vainilla','Brownie','Maracuyá','Tiramisú']},
+      {name:'Granizado de Frutas', price:7500},
       {name:'Milo Frío', price:5500},
-      {name:'Helado MiniChips', price:7300}, // renombrado
-      {name:'Cold Brew', price:5000},
+      {name:'Cold Brew', price:5000}, 
       {name:'Té Chai Frío', price:7000},
       {name:'Jugo en agua', price:4000},
       {name:'Jugo en leche', price:5200},
-      {name:'Botella con agua', price:1000}
+      {name:'Botella con agua', price:1000},
+      {name:'Tamarindo', price:3800},
+      {name:'Tamarindo Michelado', price:5500},
+
+      /* --- Subapartado SODAS --- */
+      { name: '— Sodas —', isHeader: true },
+      {name:'Soda de Café', price:8300},
+      {name:'Soda Michelada', price:6500},
+      {name:'Soda Saborizada', price:9000},
+      {name:'Soda Simple', price:3500}
     ]
   },
   {
     id: 'licor',
     name: 'Bebidas con Licor',
     items: [
+      { name: '— Cafés con Licor —', isHeader: true },
       {name:'Capuccino con Licor', price:8000},
       {name:'Café Irlandés', price:9000},
       {name:'Café y Licor', price:7000},
       {name:'Granizado con Licor', price:8000},
-      {name:'Soda Italiana', price:10000},
-      {name:'Café Imperial', price:13000}, // precio actualizado
+      {name:'Café Imperial', price:13000},
       {name:'Affogato', price:11000},
+
+      { name: '— Vinos y Otros —', isHeader: true },
+      {name:'Soda Italiana', price:10000},
       {name:'Copa de Vino', price:6000},
       {name:'Botella de Vino', price:36000},
-      {name:'Vino Caliente', price:10000}, // añadido
+      {name:'Vino Caliente', price:10000},
       {name:'Adicional de Licor', price:7000}
     ]
   },
@@ -223,7 +247,8 @@ const menuData = [
       {name:'Brownie con Helado', price:9500},
       {name:'Helado de mi Tierra', price:14600},
       {name:'Torta Griega', price:8500},
-      {name:'Sandwich', price:7500}
+      {name:'Sandwich', price:7500},
+      {name:'Helado MiniChips', price:7300} /* MOVIDO AQUÍ */
     ]
   },
   {
@@ -278,7 +303,7 @@ function init(){
     btn.onclick = () => scrollToSection(section.id, btn);
     nav.appendChild(btn);
 
-    // sección
+    // sección principal
     const secDiv = document.createElement('div');
     secDiv.id = section.id;
     secDiv.innerHTML = `
@@ -290,10 +315,20 @@ function init(){
     `;
     main.appendChild(secDiv);
 
-    // tarjetas
+    // tarjetas e items
     const grid = secDiv.querySelector(`#grid-${section.id}`);
+    
     section.items.forEach((item, idx) => {
-      // id seguro para selects
+      // 1. Si es Header
+      if(item.isHeader){
+        const headerEl = document.createElement('div');
+        headerEl.className = 'sub-category-title';
+        headerEl.innerText = item.name;
+        grid.appendChild(headerEl);
+        return; 
+      }
+
+      // 2. Si es producto
       const safeId = `${section.id}-${idx}`;
       const priceStr = `$${formatMoney(item.price)}`;
       let flavorHTML = '';
@@ -310,7 +345,7 @@ function init(){
         </div>
         <button class="add-btn" data-section="${section.id}" data-idx="${idx}"><i class="fas fa-plus"></i></button>
       `;
-      // añadir listener al botón (mejor que onclick inline para manejar safeId)
+      
       const addBtn = card.querySelector('.add-btn');
       addBtn.addEventListener('click', () => addToCartByIndex(section.id, idx));
       grid.appendChild(card);
@@ -331,7 +366,7 @@ function init(){
       }
     });
   }, {threshold:0.5});
-  // usar pequeño timeout para asegurar que se renderizó
+  
   setTimeout(() => {
     menuData.forEach(section => {
       const el = document.getElementById(section.id);
@@ -359,19 +394,18 @@ function toggleCart(){
   modal.style.display = isVisible ? 'none' : 'flex';
   if(!isVisible) renderCart();
 }
-// cerrar modal al click fuera
 document.getElementById('cartModal').addEventListener('click', function(e){
   if(e.target === this) toggleCart();
 });
 
 /* ---------------------------
-   Añadir al carrito por índice seguro
+   Añadir al carrito por índice
    --------------------------- */
 function addToCartByIndex(sectionId, idx){
   const section = menuData.find(s => s.id === sectionId);
   if(!section) return;
   const item = section.items[idx];
-  if(!item) return;
+  if(!item || item.isHeader) return; 
 
   const safeId = `${sectionId}-${idx}`;
   // si tiene sabores, validar selección
@@ -379,7 +413,6 @@ function addToCartByIndex(sectionId, idx){
     const select = document.getElementById(`flavor-${safeId}`);
     const val = select?.value || '';
     if(!val){
-      // mostrar validación (breve)
       showTemporaryMessage('Selecciona un sabor para la Malteada primero.', document.getElementById('validationMessage'));
       return;
     }
@@ -395,7 +428,6 @@ function addToCartInternal(name, price){
   if(!cart[name]) cart[name] = {price: price, qty: 1};
   else cart[name].qty += 1;
   updateCartBadge();
-  // mini feedback
   const fab = document.querySelector('.fab');
   fab.style.transform = 'scale(1.15)';
   setTimeout(() => fab.style.transform = 'scale(1)', 180);
@@ -456,7 +488,6 @@ function renderCart(){
     container.appendChild(row);
   });
 
-  // listeners para botones qty creados
   container.querySelectorAll('.qty-btn').forEach(b => {
     b.addEventListener('click', () => {
       const name = b.getAttribute('data-name');
@@ -523,11 +554,9 @@ function sendOrder(){
   const encodedMsg = encodeURIComponent(message);
   window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMsg}`, '_blank');
 
-  // cerrar y mostrar fortuna
   toggleCart();
   showSuccessMessage();
 
-  // limpiar carrito y campos
   cart = {};
   document.getElementById('tableNumber').value = '';
   document.getElementById('orderNotes').value = '';
