@@ -4,14 +4,14 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
 <title>Menú Digital | APECAFEQ Quinchía</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <style>
 :root{
   --cafe-oscuro:#2c1810;--cafe-medio:#6f4e37;--cafe-claro:#a67b5b;--crema:#f3e5ab;--papel:#faf7f2;--dorado:#d4af37;--verde-wa:#25D366;--rojo-alerta:#e74c3c;--verde-suave:#4CAF50;--sombra-suave:0 4px 15px rgba(44,24,16,0.08);--sombra-fuerte:0 8px 30px rgba(44,24,16,0.2);--radio-borde:16px;
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-body{font-family:'Lato',sans-serif;background-color:var(--papel);color:var(--cafe-oscuro);background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236f4e37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");padding-bottom:120px} /* Aumentado padding inferior para el footer */
+body{font-family:'Lato',sans-serif;background-color:var(--papel);color:var(--cafe-oscuro);background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236f4e37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");padding-bottom:120px}
 header{position:relative;background:linear-gradient(rgba(44,24,16,0.85),rgba(44,24,16,0.7)), url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');background-size:cover;background-position:center;color:white;text-align:center;padding:4rem 1.5rem 3rem;border-bottom-left-radius:40px;border-bottom-right-radius:40px;box-shadow:var(--sombra-fuerte);overflow:hidden}
 .logo-circle{width:100px;height:100px;background:white;border-radius:50%;margin:0 auto 15px;display:flex;align-items:center;justify-content:center;border:3px solid var(--dorado);color:var(--cafe-oscuro);font-size:2.5rem}
 h1{font-family:'Playfair Display',serif;font-size:2.8rem;margin-bottom:5px;letter-spacing:2px;text-transform:uppercase;text-shadow:2px 2px 4px rgba(0,0,0,0.5)}
@@ -27,20 +27,7 @@ h1{font-family:'Playfair Display',serif;font-size:2.8rem;margin-bottom:5px;lette
 .section-header h2{font-family:'Playfair Display',serif;font-size:1.8rem;margin-right:15px;white-space:nowrap}
 .section-line{height:2px;background:var(--cafe-claro);flex-grow:1;opacity:0.3;border-radius:2px}
 .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
-
-/* Estilo para los sub-apartados dentro del grid */
-.sub-category-title {
-  grid-column: 1 / -1;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
-  color: var(--cafe-medio);
-  margin-top: 20px;
-  margin-bottom: 5px;
-  padding-bottom: 5px;
-  border-bottom: 1px dashed var(--cafe-claro);
-  font-weight: 700;
-}
-
+.sub-category-title {grid-column: 1 / -1;font-family: 'Playfair Display', serif;font-size: 1.3rem;color: var(--cafe-medio);margin-top: 20px;margin-bottom: 5px;padding-bottom: 5px;border-bottom: 1px dashed var(--cafe-claro);font-weight: 700;}
 .product-card{background:white;border-radius:var(--radio-borde);padding:18px;display:flex;justify-content:space-between;align-items:center;box-shadow:var(--sombra-suave);transition:transform 0.2s,box-shadow 0.2s;border:1px solid rgba(0,0,0,0.03);position:relative;overflow:hidden}
 .product-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--cafe-claro)}
 .product-card:hover{transform:translateY(-3px);box-shadow:0 10px 20px rgba(0,0,0,0.08)}
@@ -81,57 +68,37 @@ h1{font-family:'Playfair Display',serif;font-size:2.8rem;margin-bottom:5px;lette
 .flavor-select{margin-top:10px;padding:8px;border-radius:10px;border:1px solid #ddd;font-weight:700}
 @media(min-width:768px){.modal-backdrop{align-items:center}.cart-modal-content{height:auto;max-height:80vh;border-radius:20px}}
 
-/* --- ESTILOS FOOTER Y CRÉDITOS --- */
-.app-footer {
-  text-align: center;
-  padding: 40px 20px 30px;
-  background-color: rgba(255,255,255,0.5);
-  margin-top: 40px;
-  border-top: 1px dashed var(--cafe-claro);
+/* --- GALLETA DE LA FORTUNA --- */
+.fortune-section { max-width: 600px; margin: 40px auto 20px; text-align: center; padding: 20px; position: relative; }
+.cookie-container { cursor: pointer; transition: transform 0.3s; display: inline-block; position: relative; }
+.cookie-icon { font-size: 5rem; display: block; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2)); animation: floatCookie 3s ease-in-out infinite; }
+.cookie-container:active { transform: scale(0.95); }
+.cookie-container.shake { animation: shake 0.5s; }
+.fortune-paper { 
+  display: none; 
+  background: #fff; 
+  padding: 15px 25px; 
+  border: 1px solid #eee; 
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+  margin-top: -20px; 
+  position: relative; 
+  z-index: 10; 
+  transform: rotate(-1deg);
+  border-left: 4px solid var(--dorado);
+  animation: slidePaper 0.5s ease-out;
 }
-.fb-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background-color: #1877F2;
-  color: white;
-  padding: 10px 25px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 700;
-  margin-bottom: 25px;
-  box-shadow: 0 4px 10px rgba(24, 119, 242, 0.3);
-  transition: transform 0.2s;
-}
-.fb-link:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(24, 119, 242, 0.4);
-}
-.credits-block {
-  font-family: 'Playfair Display', serif;
-  color: var(--cafe-medio);
-}
-.credits-block p {
-  margin: 5px 0;
-}
-.heart-beat {
-  color: var(--rojo-alerta);
-  display: inline-block;
-  animation: heartBeat 1.5s infinite;
-}
-@keyframes heartBeat {
-  0% { transform: scale(1); }
-  14% { transform: scale(1.3); }
-  28% { transform: scale(1); }
-  42% { transform: scale(1.3); }
-  70% { transform: scale(1); }
-}
-.credits-names {
-  font-family: 'Lato', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--cafe-oscuro);
-}
+.fortune-text { font-family: 'Dancing Script', cursive; font-size: 1.4rem; color: var(--cafe-oscuro); line-height: 1.4; }
+@keyframes floatCookie { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes shake { 0% { transform: rotate(0deg); } 25% { transform: rotate(5deg); } 50% { transform: rotate(0eg); } 75% { transform: rotate(-5deg); } 100% { transform: rotate(0deg); } }
+@keyframes slidePaper { from { opacity: 0; transform: translateY(20px) rotate(-1deg); } to { opacity: 1; transform: translateY(0) rotate(-1deg); } }
+
+/* --- FOOTER Y CRÉDITOS --- */
+.app-footer { text-align: center; padding: 40px 20px 30px; background-color: rgba(255,255,255,0.5); margin-top: 10px; border-top: 1px dashed var(--cafe-claro); }
+.credits-block { font-family: 'Playfair Display', serif; color: var(--cafe-medio); }
+.credits-block p { margin: 5px 0; }
+.heart-beat { color: var(--rojo-alerta); display: inline-block; animation: heartBeat 1.5s infinite; }
+@keyframes heartBeat { 0% { transform: scale(1); } 14% { transform: scale(1.3); } 28% { transform: scale(1); } 42% { transform: scale(1.3); } 70% { transform: scale(1); } }
+.credits-names { font-family: 'Lato', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--cafe-oscuro); }
 </style>
 </head>
 <body>
@@ -153,13 +120,26 @@ h1{font-family:'Playfair Display',serif;font-size:2.8rem;margin-bottom:5px;lette
 
 <main class="menu-wrapper" id="menuWrapper"></main>
 
+<section class="fortune-section">
+  <h2 style="font-family:'Playfair Display'; color:var(--cafe-oscuro); margin-bottom:15px; font-size:1.5rem;">✨ Tu Mensaje del Día ✨</h2>
+  <p style="font-size:0.9rem; color:#777; margin-bottom:20px;">Toca la galleta y descubre qué tiene Quinchía para ti hoy.</p>
+  
+  <div class="cookie-container" id="cookieContainer" onclick="openFortune()">
+    <span class="cookie-icon">🥠</span>
+  </div>
+
+  <div class="fortune-paper" id="fortunePaper">
+    <p class="fortune-text" id="fortuneText">...</p>
+  </div>
+</section>
+
 <footer class="app-footer">
- 
   <div class="credits-block">
     <p>Carta hecha con cariño por</p> <p>Pasantes Apecafeq 2025</p>
     <p class="credits-names">David, Leo y Adisel <i class="fas fa-heart heart-beat"></i></p>
   </div>
 </footer>
+
 
 <div class="fab-container" onclick="toggleCart()">
   <div class="fab">
@@ -191,14 +171,14 @@ h1{font-family:'Playfair Display',serif;font-size:2.8rem;margin-bottom:5px;lette
 <div class="modal-backdrop" id="successModal" style="align-items:center;">
   <div class="success-modal-content">
     <h3><i class="fas fa-hand-sparkles"></i> ¡Orden Recibida!</h3>
-    <p id="fortuneMessage"></p>
+    <p id="fortuneMessageOrder"></p>
     <button onclick="document.getElementById('successModal').style.display='none'">Genial, Gracias</button>
   </div>
 </div>
 
 <script>
 /* ---------------------------
-   MENU DATA (Actualizado: Helado MiniChips movido a Acompaña tu Café)
+   MENU DATA
    --------------------------- */
 const menuData = [
   {
@@ -243,7 +223,6 @@ const menuData = [
     id: 'frias',
     name: 'Bebidas Frías',
     items: [
-      /* --- Subapartado CAFÉS --- */
       { name: '— Cafés Fríos —', isHeader: true },
       {name:'Helado y Café', price:10000},
       {name:'Frappe', price:5000},
@@ -253,7 +232,6 @@ const menuData = [
       {name:'Limonada de Café', price:4500},
       {name:'Helado Espresso', price:6500},
 
-      /* --- Subapartado Restante (Sin MiniChips) --- */
       { name: '— Malteadas y Refrescantes —', isHeader: true },
       {name:'Malteada', price:10500, flavors:['Café','Frutos Rojos','Vainilla','Brownie','Maracuyá','Tiramisú']},
       {name:'Granizado de Frutas', price:7500},
@@ -266,7 +244,6 @@ const menuData = [
       {name:'Tamarindo', price:3800},
       {name:'Tamarindo Michelado', price:5500},
 
-      /* --- Subapartado SODAS (ORDENADAS POR PRECIO) --- */
       { name: '— Sodas —', isHeader: true },
       {name:'Soda Simple', price:3500},
       {name:'Soda Michelada', price:6500},
@@ -308,7 +285,7 @@ const menuData = [
       {name:'Helado de mi Tierra', price:14600},
       {name:'Torta Griega', price:8500},
       {name:'Sandwich', price:7500},
-      {name:'Helado MiniChips', price:7300} /* MOVIDO AQUÍ */
+      {name:'Helado MiniChips', price:7300}
     ]
   },
   {
@@ -322,33 +299,119 @@ const menuData = [
 ];
 
 /* ---------------------------
-   Fortuna messages y configuración
+   100 MENSAJES DE LA FORTUNA
    --------------------------- */
-const QUINCHIA_FORTUNES = [
-  "La mejor vista del Eje Cafetero es la que tienes ahora, esperando tu café.",
-  "Recuerda que la felicidad se mide en el número de tazas de café al día. ¡Hoy vas bien!",
-  "Un buen grano de Risaralda sabe que el secreto está en la paciencia. Tu pedido ya está en camino.",
-  "Hoy es un día perfecto para una pausa. Tu elección de café ha sido sabia.",
-  "El aroma que persigues te llevará a grandes ideas. ¡Disfruta tu Quixaraca!",
-  "No te preocupes por el mañana, el café de hoy es suficiente bendición.",
-  "Tu alma está tan llena como la taza que pronto tendrás en tus manos. ¡Salud!",
-  "La vida es corta, pero una buena taza de café colombiano la hace sentir eterna.",
-  "Como el grano en la montaña, superarás todos los retos con altura y buen sabor."
+const FORTUNE_MESSAGES = [
+  "Como el Cerro Gobia vigila a Quinchía, grandes cosas vigilan tu destino.",
+  "El espíritu de Xixaraca te dará la fuerza que necesitas hoy.",
+  "La vida es como el café: el aroma depende de con qué amor la prepares.",
+  "Hoy encontrarás oro, no en las minas, sino en la sonrisa de un amigo.",
+  "Tu paciencia rendirá frutos, tan dulces como un café de cosecha tardía.",
+  "Un buen café cura lo que la medicina no alcanza.",
+  "La Villa de los Cerros te susurra: relájate, todo va a estar bien.",
+  "Al igual que el grano se tuesta para sacar su mejor sabor, tus retos te harán brillar.",
+  "Hoy es un día perfecto para perdonar y tomarse un tinto.",
+  "La magia de Risaralda corre por tus venas. ¡Cree en ti!",
+  "Un sorbo de café Xixaraca aclara la mente y alegra el alma.",
+  "Tu energía hoy es tan potente como un Espresso Doble.",
+  "Las mejores ideas nacen frente a una taza de café humeante.",
+  "Como las montañas de Quinchía, mantente firme ante la adversidad.",
+  "El amor llegará a tu vida, caliente y reconfortante.",
+  "No cuentes los días, haz que los días cuenten (y tomen café).",
+  "La tradición cafetera te enseña que lo bueno toma tiempo.",
+  "Alguien está pensando en invitarte un café. Di que sí.",
+  "Tu sonrisa ilumina más que el sol sobre los cafetales.",
+  "La dulzura que buscas ya está dentro de ti, no necesitas azúcar.",
+  "Deja que tus preocupaciones se disuelvan como panela en agua caliente.",
+  "La fortuna favorece a los que se levantan temprano por su café.",
+  "Un amigo verdadero es aquel que te comparte su última almohabana.",
+  "Mira al horizonte, grandes oportunidades vienen bajando la montaña.",
+  "El secreto de la felicidad está en disfrutar el sorbo presente.",
+  "Xixaraca te recuerda: la valentía es tu mejor accesorio.",
+  "Hoy, sé tan auténtico como el café de nuestra tierra.",
+  "Las penas con café son menos penas.",
+  "Escucha el silencio, ahí encontrarás las respuestas que buscas.",
+  "Tu creatividad hoy fluirá como el agua de nuestras cascadas.",
+  "No busques el momento perfecto, haz que el momento sea perfecto con un café.",
+  "La prosperidad llegará a tu casa con aroma a café recién colado.",
+  "Eres la mezcla perfecta de fuerza y dulzura.",
+  "Un viaje inesperado traerá alegría a tu corazón.",
+  "La gratitud es el ingrediente secreto de una vida abundante.",
+  "Hoy es un buen día para empezar algo nuevo en Quinchía.",
+  "Deja que el aroma del café despierte tus sueños dormidos.",
+  "La amistad es como el café: mejor si es fuerte y caliente.",
+  "No hay problema que una charla y un capuchino no puedan suavizar.",
+  "El éxito es la suma de pequeños esfuerzos, sorbo a sorbo.",
+  "Tu bondad es un tesoro más valioso que el oro de los Quinchías.",
+  "Respira profundo, el aire de la montaña limpia el alma.",
+  "Hoy recibirás una noticia tan buena como el primer café de la mañana.",
+  "Sé la razón por la que alguien sonría hoy en Apecafeq.",
+  "La vida es corta, pídete ese postre.",
+  "Como el buen café, dejas un buen sabor de boca donde vas.",
+  "La calma es el superpoder que necesitas hoy.",
+  "Confía en el proceso, la cosecha será abundante.",
+  "Tu corazón es noble y fuerte como nuestra tierra.",
+  "Un reencuentro agradable te espera pronto.",
+  "La inspiración te encontrará trabajando (o tomando café).",
+  "No dejes para mañana el café que te puedes tomar hoy.",
+  "Tu presencia es tan reconfortante como un chocolate caliente.",
+  "Los sueños grandes comienzan con un pequeño grano de fe.",
+  "Quinchía tiene mil historias, hoy escribe la tuya.",
+  "La felicidad no se compra, se cuela en la cocina.",
+  "Eres capaz de escalar cualquier montaña que te propongas.",
+  "Dale tiempo al tiempo, todo tiene su punto de ebullición.",
+  "La risa es el mejor acompañante para tu bebida.",
+  "Hoy brillarás con luz propia.",
+  "El destino te tiene preparada una sorpresa dulce.",
+  "No temas a los cambios, a veces son necesarios para filtrar lo malo.",
+  "Tu intuición está tan fina como un catador experto.",
+  "Rodéate de personas que te den energía, no que te la quiten.",
+  "La belleza de la vida está en los detalles simples.",
+  "Un buen libro y un café Xixaraca: el plan perfecto.",
+  "Hoy atraes abundancia y buenas vibras.",
+  "Tu esfuerzo de hoy será el éxito de mañana.",
+  "Mantén los ojos abiertos, la magia está cerca.",
+  "El café conecta mundos, hoy conectarás con alguien especial.",
+  "Sé suave con los demás, pero fuerte contigo mismo.",
+  "La naturaleza de Quinchía te invita a desconectar para reconectar.",
+  "Una idea brillante llegará antes de que termines tu taza.",
+  "El amor propio es el primer romance que debes cultivar.",
+  "Si la vida te da limones, pide una limonada de café.",
+  "Tu calidez humana es tu mayor virtud.",
+  "Hoy es el día para decir 'te quiero' a quien importa.",
+  "La lluvia solo hace que el café sepa mejor.",
+  "Eres más fuerte de lo que crees y más valioso de lo que piensas.",
+  "Que tu día sea tan bueno como el aroma de esta cafetería.",
+  "La paz interior es el nuevo éxito.",
+  "Un gesto amable tuyo cambiará el día de alguien.",
+  "La vida te sonríe, sonríele de vuelta.",
+  "No apresures el río, deja que fluya.",
+  "El mejor café es el que se comparte.",
+  "Tienes el don de alegrar corazones.",
+  "Hoy conquista tus miedos con una taza en la mano.",
+  "La sabiduría ancestral de esta tierra te acompaña.",
+  "Eres único, como una edición especial de café.",
+  "Lo que buscas te está buscando a ti.",
+  "Disfruta la pausa, no solo la meta.",
+  "Tu potencial es infinito, como el cielo sobre los cerros.",
+  "El universo conspira a tu favor mientras tomas café.",
+  "Una palabra amable abre puertas de hierro.",
+  "Hoy planta una semilla de esperanza.",
+  "La dulzura de la vida está en compartir.",
+  "Eres parte de la gran familia cafetera.",
+  "Tu luz guía a otros en la oscuridad.",
+  "¡Salud por ti y por este momento!",
+  "Recuerda: Todo mejora con un café."
 ];
 
 let cart = {};
 const WHATSAPP_NUMBER = "573132293165";
 
 /* ---------------------------
-   UTIL: formateador de moneda
+   UTIL & RENDER
    --------------------------- */
-function formatMoney(n){
-  return n.toLocaleString('es-CO');
-}
+function formatMoney(n){ return n.toLocaleString('es-CO'); }
 
-/* ---------------------------
-   RENDER: genera el DOM del menú
-   --------------------------- */
 function init(){
   const nav = document.getElementById('categoryNav');
   const main = document.getElementById('menuWrapper');
@@ -356,30 +419,19 @@ function init(){
   main.innerHTML = '';
 
   menuData.forEach((section, sIndex) => {
-    // botón nav
     const btn = document.createElement('button');
     btn.className = `cat-btn ${sIndex===0?'active':''}`;
     btn.innerText = section.name;
     btn.onclick = () => scrollToSection(section.id, btn);
     nav.appendChild(btn);
 
-    // sección principal
     const secDiv = document.createElement('div');
     secDiv.id = section.id;
-    secDiv.innerHTML = `
-      <div class="section-header">
-        <h2>${section.name}</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="products-grid" id="grid-${section.id}"></div>
-    `;
+    secDiv.innerHTML = `<div class="section-header"><h2>${section.name}</h2><div class="section-line"></div></div><div class="products-grid" id="grid-${section.id}"></div>`;
     main.appendChild(secDiv);
-
-    // tarjetas e items
     const grid = secDiv.querySelector(`#grid-${section.id}`);
      
     section.items.forEach((item, idx) => {
-      // 1. Si es Header
       if(item.isHeader){
         const headerEl = document.createElement('div');
         headerEl.className = 'sub-category-title';
@@ -387,32 +439,21 @@ function init(){
         grid.appendChild(headerEl);
         return; 
       }
-
-      // 2. Si es producto
       const safeId = `${section.id}-${idx}`;
       const priceStr = `$${formatMoney(item.price)}`;
       let flavorHTML = '';
       if(Array.isArray(item.flavors) && item.flavors.length){
-        flavorHTML = `<select class="flavor-select" id="flavor-${safeId}" data-selected=""><option value="" disabled selected>Elige sabor</option>${item.flavors.map(f=>`<option value="${f}">${f}</option>`).join('')}</select>`;
+        flavorHTML = `<select class="flavor-select" id="flavor-${safeId}"><option value="" disabled selected>Elige sabor</option>${item.flavors.map(f=>`<option value="${f}">${f}</option>`).join('')}</select>`;
       }
       const card = document.createElement('div');
       card.className = 'product-card';
-      card.innerHTML = `
-        <div class="product-info">
-          <h3>${item.name}</h3>
-          <div class="product-price">${priceStr}</div>
-          ${flavorHTML}
-        </div>
-        <button class="add-btn" data-section="${section.id}" data-idx="${idx}"><i class="fas fa-plus"></i></button>
-      `;
-      
+      card.innerHTML = `<div class="product-info"><h3>${item.name}</h3><div class="product-price">${priceStr}</div>${flavorHTML}</div><button class="add-btn" data-section="${section.id}" data-idx="${idx}"><i class="fas fa-plus"></i></button>`;
       const addBtn = card.querySelector('.add-btn');
       addBtn.addEventListener('click', () => addToCartByIndex(section.id, idx));
       grid.appendChild(card);
     });
   });
 
-  // observar secciones para nav activo
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if(entry.isIntersecting){
@@ -426,18 +467,9 @@ function init(){
       }
     });
   }, {threshold:0.5});
-  
-  setTimeout(() => {
-    menuData.forEach(section => {
-      const el = document.getElementById(section.id);
-      if(el) observer.observe(el);
-    });
-  }, 300);
+  setTimeout(() => { menuData.forEach(section => { const el = document.getElementById(section.id); if(el) observer.observe(el); }); }, 300);
 }
 
-/* ---------------------------
-   SCROLL a sección
-   --------------------------- */
 function scrollToSection(id, btn){
   const el = document.getElementById(id);
   if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
@@ -446,44 +478,58 @@ function scrollToSection(id, btn){
 }
 
 /* ---------------------------
-   MODAL carrito
+   GALLETA DE LA FORTUNA LOGIC
+   --------------------------- */
+function openFortune() {
+  const cookieContainer = document.getElementById('cookieContainer');
+  const paper = document.getElementById('fortunePaper');
+  const text = document.getElementById('fortuneText');
+  
+  if (paper.style.display === 'block') return; // Ya está abierta, no hacer nada
+
+  // Animación Shake
+  cookieContainer.classList.add('shake');
+  
+  setTimeout(() => {
+    cookieContainer.classList.remove('shake');
+    cookieContainer.style.display = 'none'; // Ocultar galleta
+    
+    // Seleccionar mensaje aleatorio
+    const randomIndex = Math.floor(Math.random() * FORTUNE_MESSAGES.length);
+    text.innerText = `"${FORTUNE_MESSAGES[randomIndex]}"`;
+    
+    // Mostrar papel
+    paper.style.display = 'block';
+  }, 500);
+}
+
+/* ---------------------------
+   CART & APP LOGIC
    --------------------------- */
 function toggleCart(){
   const modal = document.getElementById('cartModal');
-  const isVisible = modal.style.display === 'flex';
-  modal.style.display = isVisible ? 'none' : 'flex';
-  if(!isVisible) renderCart();
+  modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
+  if(modal.style.display === 'flex') renderCart();
 }
-document.getElementById('cartModal').addEventListener('click', function(e){
-  if(e.target === this) toggleCart();
-});
+document.getElementById('cartModal').addEventListener('click', function(e){ if(e.target === this) toggleCart(); });
 
-/* ---------------------------
-   Añadir al carrito por índice
-   --------------------------- */
 function addToCartByIndex(sectionId, idx){
   const section = menuData.find(s => s.id === sectionId);
   if(!section) return;
   const item = section.items[idx];
-  if(!item || item.isHeader) return; 
-
   const safeId = `${sectionId}-${idx}`;
-  // si tiene sabores, validar selección
   if(Array.isArray(item.flavors) && item.flavors.length){
     const select = document.getElementById(`flavor-${safeId}`);
-    const val = select?.value || '';
-    if(!val){
-      showTemporaryMessage('Selecciona un sabor para la Malteada primero.', document.getElementById('validationMessage'));
+    if(!select.value){
+      showTemporaryMessage('Selecciona un sabor primero.', document.getElementById('validationMessage'));
       return;
     }
-    const nameWithFlavor = `${item.name} (${val})`;
-    addToCartInternal(nameWithFlavor, item.price);
+    addToCartInternal(`${item.name} (${select.value})`, item.price);
   } else {
     addToCartInternal(item.name, item.price);
   }
 }
 
-/* función interna para el carrito */
 function addToCartInternal(name, price){
   if(!cart[name]) cart[name] = {price: price, qty: 1};
   else cart[name].qty += 1;
@@ -493,9 +539,6 @@ function addToCartInternal(name, price){
   setTimeout(() => fab.style.transform = 'scale(1)', 180);
 }
 
-/* ---------------------------
-   Cambiar qty y render carrito
-   --------------------------- */
 function changeQty(name, delta){
   if(cart[name]){
     cart[name].qty += delta;
@@ -518,116 +561,53 @@ function renderCart(){
   let total = 0;
   const entries = Object.entries(cart);
   if(entries.length === 0){
-    container.innerHTML = `
-      <div class="empty-cart-msg">
-        <i class="fas fa-mug-hot" style="font-size:3rem;color:#ddd"></i>
-        <p>No hay productos en la comanda.</p>
-        <button onclick="toggleCart()" style="color:var(--cafe-medio);border:none;background:none;text-decoration:underline;cursor:pointer;">Volver al menú</button>
-      </div>
-    `;
+    container.innerHTML = `<div class="empty-cart-msg"><i class="fas fa-mug-hot" style="font-size:3rem;color:#ddd"></i><p>No hay productos.</p></div>`;
     totalEl.innerText = `$0`;
     return;
   }
-
   entries.forEach(([name, item]) => {
-    const subtotal = item.price * item.qty;
-    total += subtotal;
-    const row = document.createElement('div');
-    row.className = 'cart-item';
-    row.innerHTML = `
-      <div class="cart-item-info">
-        <strong>${name}</strong>
-        <small>$${formatMoney(item.price)} c/u</small>
-      </div>
-      <div class="qty-selector">
-        <button class="qty-btn" data-name="${name}" data-delta="-1">-</button>
-        <span style="font-weight:bold; min-width:20px; text-align:center;">${item.qty}</span>
-        <button class="qty-btn" data-name="${name}" data-delta="1">+</button>
-      </div>
-    `;
-    container.appendChild(row);
+    total += item.price * item.qty;
+    container.innerHTML += `<div class="cart-item"><div class="cart-item-info"><strong>${name}</strong><small>$${formatMoney(item.price)}</small></div><div class="qty-selector"><button class="qty-btn" onclick="changeQty('${name}',-1)">-</button><span>${item.qty}</span><button class="qty-btn" onclick="changeQty('${name}',1)">+</button></div></div>`;
   });
-
-  container.querySelectorAll('.qty-btn').forEach(b => {
-    b.addEventListener('click', () => {
-      const name = b.getAttribute('data-name');
-      const delta = parseInt(b.getAttribute('data-delta'), 10);
-      changeQty(name, delta);
-    });
-  });
-
   totalEl.innerText = `$${formatMoney(total)}`;
 }
 
-/* ---------------------------
-   Mensajes de validación temporales
-   --------------------------- */
 function showTemporaryMessage(msg, element){
   element.innerText = msg;
   element.style.display = 'block';
-  void element.offsetWidth;
   element.style.opacity = '1';
-  setTimeout(() => {
-    element.style.opacity = '0';
-    setTimeout(() => { element.style.display = 'none'; }, 400);
-  }, 2500);
+  setTimeout(() => { element.style.opacity = '0'; setTimeout(() => { element.style.display = 'none'; }, 400); }, 2500);
 }
 
-/* ---------------------------
-   Fortuna
-   --------------------------- */
-function showSuccessMessage(){
-  const rand = Math.floor(Math.random() * QUINCHIA_FORTUNES.length);
-  document.getElementById('fortuneMessage').innerText = QUINCHIA_FORTUNES[rand];
-  document.getElementById('successModal').style.display = 'flex';
-}
-
-/* ---------------------------
-   Envío a WhatsApp
-   --------------------------- */
 function sendOrder(){
-  const tableNumberInput = document.getElementById('tableNumber');
-  const tableNumber = (tableNumberInput.value || '').toString().trim();
-  const notes = document.getElementById('orderNotes').value || '';
-  const validationMessage = document.getElementById('validationMessage');
-
-  if(Object.keys(cart).length === 0){
-    showTemporaryMessage('Por favor, agrega productos a tu comanda primero ☕', validationMessage);
+  const table = document.getElementById('tableNumber').value;
+  const notes = document.getElementById('orderNotes').value;
+  if(Object.keys(cart).length === 0 || !table){
+    showTemporaryMessage(!table ? 'Falta el N° de Mesa' : 'Carrito vacío', document.getElementById('validationMessage'));
     return;
   }
-  if(!tableNumber || isNaN(tableNumber) || parseInt(tableNumber,10) <= 0){
-    showTemporaryMessage('🛑 El número de Mesa es *obligatorio*. Por favor, ingrésalo.', validationMessage);
-    tableNumberInput.focus();
-    return;
-  }
-
-  let message = `👋 *MESA No. ${tableNumber}* - Nueva Comanda:\n\n`;
+  let msg = `👋 *MESA ${table}*:\n`;
   let total = 0;
-  Object.entries(cart).forEach(([name, item]) => {
-    const subtotal = item.price * item.qty;
-    total += subtotal;
-    message += `▪ *${item.qty}x* ${name} ($${formatMoney(subtotal)})\n`;
+  Object.entries(cart).forEach(([n, i]) => {
+    msg += `▪ ${i.qty}x ${n}\n`;
+    total += i.price * i.qty;
   });
-  message += `\n💰 *TOTAL: $${formatMoney(total)}*`;
-  if(notes.trim()) message += `\n\n📝 *Notas Adicionales:* ${notes}`;
-
-  const encodedMsg = encodeURIComponent(message);
-  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMsg}`, '_blank');
-
+  msg += `\n💰 Total: $${formatMoney(total)}`;
+  if(notes) msg += `\n📝 ${notes}`;
+  
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
   toggleCart();
-  showSuccessMessage();
-
+  
+  document.getElementById('fortuneMessageOrder').innerText = "¡Gracias por tu pedido! En breve lo llevamos a tu mesa.";
+  document.getElementById('successModal').style.display = 'flex';
+  
   cart = {};
   document.getElementById('tableNumber').value = '';
   document.getElementById('orderNotes').value = '';
   updateCartBadge();
 }
 
-/* ---------------------------
-   Inicializar app
-   --------------------------- */
 init();
 </script>
-
 </body>
 </html>
