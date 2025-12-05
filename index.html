@@ -233,11 +233,7 @@ const menuData = [
 
       { name: '— Malteadas y Refrescantes —', isHeader: true },
       {name:'Malteada', price:10500, flavors:['Café','Frutos Rojos','Vainilla','Brownie','Maracuyá','Tiramisú']},
-      
-      /* --- AQUÍ ESTÁ EL CAMBIO SOLICITADO --- */
       {name:'Granizado de Frutas', price:7500, flavors:['Mango','Mora','Fresa','Guanábana']},
-      /* --------------------------------------- */
-      
       {name:'Cold Brew', price:5000}, 
       {name:'Té Chai Frío', price:7000},
       {name:'Jugo en agua', price:4000},
@@ -245,8 +241,11 @@ const menuData = [
       {name:'Tamarindo Michelado', price:5500},
       {name:'Tamarindo', price:3800},
       {name:'Milo Frío', price:5500},
-      {name:'Botella con agua', price:1000},
       
+      /* --- AGUAS SEPARADAS PARA MANEJAR PRECIOS --- */
+      {name:'Agua 300ml', price:1000},
+      {name:'Agua 600ml', price:2000},
+      /* ------------------------------------------- */
 
       { name: '— Sodas —', isHeader: true },
       {name:'Soda Simple', price:3500},
